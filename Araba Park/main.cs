@@ -43,8 +43,10 @@ namespace Araba_Park
             label2.Text = "Bağlı cihaz yok";
 
         }
-        
-        
+
+        int[] msf;
+
+
         private void Button1_Click(object sender, EventArgs e)
         {
             if (comboBox1.Items.Count == 0)
@@ -87,7 +89,7 @@ namespace Araba_Park
             {
                 sp.Close();
                 label2.Text = "Bağlantı kesildi";
-                
+
                 comboBox1.Enabled = true;
                 button1.Enabled = true;
                 button2.Enabled = false;
@@ -152,7 +154,7 @@ namespace Araba_Park
                 int onMesafe, arkaMesafe;
                 onMesafe = Convert.ToInt32(mesafe[0]);
                 arkaMesafe = Convert.ToInt32(mesafe[1]);
-                if (onMesafe<7)
+                if (onMesafe < 7)
                 {
                     label4.Invoke(new Action(() => label4.ForeColor = Color.Red));
                 }
@@ -178,8 +180,10 @@ namespace Araba_Park
                 }
                 label3.Invoke(new Action(() => label3.Text = mesafe[1]));
                 label4.Invoke(new Action(() => label4.Text = mesafe[0]));
-                
-
+                /*if (onMesafe<30 && arkaMesafe<30)
+                {
+                    Console.Beep(300, onMesafe*10);
+                }*/
             }
         }
 
